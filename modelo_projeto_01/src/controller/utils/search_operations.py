@@ -14,15 +14,15 @@ def group_by():
 def filter_by(dataset, reference_column, filter_value):
 
     if (reference_column == CAR_MAKE_COLUMN_NAME):
-        filtered_df = dataset.drop(dataset[dataset.car_make != filter_value].index)
+        filtered_dataset = dataset.drop(dataset[dataset.car_make != filter_value].index)
         
     elif (reference_column == CITY_COLUMN_NAME):
-        filtered_df = dataset.drop(dataset[dataset.city != filter_value].index)
+        filtered_dataset = dataset.drop(dataset[dataset.city != filter_value].index)
     
     else:
         raise FilterOperationUnavailable("Filter not available for requested column", reference_column)
 
-    grouped_df = filtered_df.groupby([reference_column]).mean()
-    car_value_mean = grouped_df[[CAR_VALUE_COLUMN_NAME]]
+    grouped_dataset = filtered_dataset.groupby([reference_column]).mean()
+    car_value_mean = grouped_dataset[[CAR_VALUE_COLUMN_NAME]]
 
     return car_value_mean
