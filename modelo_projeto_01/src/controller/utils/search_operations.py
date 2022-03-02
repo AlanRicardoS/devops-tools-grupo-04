@@ -7,7 +7,10 @@ CAR_MAKE_COLUMN_NAME = 'car_make'
 CITY_COLUMN_NAME = 'city'
 
 def group_by(dataset, group_value):
-    grouped = dataset.groupby(group_value)
+    try:
+        grouped = dataset.groupby(group_value)
+    except:
+        raise FilterOperationUnavailable("Could not group by dataset using " + group_value)
     return grouped
 
 def filter_by(dataset, reference_column, filter_value):
