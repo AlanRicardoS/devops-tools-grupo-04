@@ -2,7 +2,7 @@
 
 def get():
     # TODO: IMPLEMENTE AQUI
-    
+
     response = {
         "data": "VALOR RETORNADO PELA CONTROLLER QUANDO A SOLICITAÇÃO FOR GET"
     }
