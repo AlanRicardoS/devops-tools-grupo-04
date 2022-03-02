@@ -6,10 +6,9 @@ CAR_VALUE_COLUMN_NAME = 'car_value'
 CAR_MAKE_COLUMN_NAME = 'car_make'
 CITY_COLUMN_NAME = 'city'
 
-def group_by():
-    # TODO: implement function following:
-    # https://github.com/AlanRicardoS/devops-tools-grupo-04/issues/14
-    return None
+def group_by(dataset, group_value):
+    grouped = dataset.groupby(group_value)
+    return grouped
 
 def filter_by(dataset, reference_column, filter_value):
 
