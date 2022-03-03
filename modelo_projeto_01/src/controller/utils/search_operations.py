@@ -8,10 +8,11 @@ CITY_COLUMN_NAME = 'city'
 
 def group_by(dataset, group_value):
     try:
-        grouped = dataset.groupby(group_value)
+        grouped = dataset.groupby(group_value).mean()
+        car_value_mean = grouped[[CAR_VALUE_COLUMN_NAME]]
     except:
         raise FilterOperationUnavailable("Could not group by dataset using " + group_value)
-    return grouped
+    return car_value_mean
 
 def filter_by(dataset, reference_column, filter_value):
 
@@ -24,7 +25,7 @@ def filter_by(dataset, reference_column, filter_value):
     else:
         raise FilterOperationUnavailable("Filter not available for requested column", reference_column)
 
-    grouped_dataset = filtered_dataset.groupby([reference_column]).mean()
+    grouped_dataset = group_by(filtered_dataset, reference_column)
     car_value_mean = grouped_dataset[[CAR_VALUE_COLUMN_NAME]]
 
     return car_value_mean
