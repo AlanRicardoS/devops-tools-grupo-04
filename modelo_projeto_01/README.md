@@ -2,12 +2,15 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ## Abstract ##
-TODO: ADICIONAR UM RESUMO DA APLICAÇÃO AQUI
+- 3. Como um desenvolvedor do VemCar, eu gostaria de abrir e ler arquivos.
+    - 3.1. Criar função para abrir e ler arquivos csv
+    - 3.2. Criar função para abrir e ler arquivos json
 
 ## I. Development Requirements ##
 
 ### A. Versions ###
- - TODO: ADICIONAR A VERSÃO DO PYTHON QUE DEVE SER UTILIZADA
+ - Python 3.10.2
+ - Pandas 1.4.1
 
 ### B. Running Server ###
 ```bash
