@@ -10,8 +10,9 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_get_example():
         try:
-            
-            response = get_mean_by_carmake_with_filter.get_mean_by_carmake_with_filter(request.headers["carmake"])
+
+            response = get_mean_by_carmake_with_filter.get_mean_by_carmake_with_filter(
+                request.headers["carmake"])
 
             return response, 200
         except Exception as err:

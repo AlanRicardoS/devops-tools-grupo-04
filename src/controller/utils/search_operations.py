@@ -6,14 +6,13 @@ CAR_MAKE_COLUMN_NAME = 'car_make'
 CITY_COLUMN_NAME = 'city'
 
 
-def group_by():
-    dataset = pd.read_csv('files/dataset.csv')
+def group_by(dataset, group_value):
     try:
-        grouped = dataset.groupby(CAR_MAKE_COLUMN_NAME).mean()
+        grouped = dataset.groupby(group_value).mean()
         car_value_mean = grouped[[CAR_VALUE_COLUMN_NAME]]
     except:
         raise FilterOperationUnavailable(
-            "Could not group by dataset using " + CAR_MAKE_COLUMN_NAME)
+            "Could not group by dataset using " + group_value)
     return car_value_mean
 
 
