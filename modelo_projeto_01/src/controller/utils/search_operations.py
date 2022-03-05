@@ -1,12 +1,12 @@
 import pandas as pd
-
-from exceptions import FilterOperationUnavailable
+from src.controller.utils.exceptions import FilterOperationUnavailable
 
 CAR_VALUE_COLUMN_NAME = 'car_value'
 CAR_MAKE_COLUMN_NAME = 'car_make'
 CITY_COLUMN_NAME = 'city'
 
-def group_by(dataset):
+def group_by():
+    dataset = pd.read_csv('files/dataset.csv')
     try:
         grouped = dataset.groupby(CAR_MAKE_COLUMN_NAME).mean()
         car_value_mean = grouped[[CAR_VALUE_COLUMN_NAME]]
