@@ -2,7 +2,6 @@ from operator import ge
 from flask import jsonify, request
 from src.infra.utility.http import Http
 import src.infra.http.auth as auth
-import src.controller.post_receive_files as receive_file
 import flask
 from src.infra.utility.generator import Generator
 
