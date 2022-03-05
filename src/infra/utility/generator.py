@@ -8,7 +8,7 @@ class Generator:
 
     @staticmethod
     def date_now_isoformat():
-        return datetime.now().strftime('%Y-%m-%d_%H.%M')
+        return datetime.now().strftime('%Y-%m-%d_%H_%M')
 
     @staticmethod
     def radom_string_number() -> str:
