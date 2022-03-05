@@ -1,13 +1,14 @@
 from datetime import datetime
 from random import uniform
 
+
 class Generator:
     def __init__(self):
         pass
 
     @staticmethod
     def date_now_isoformat():
-        return datetime.now().date().isoformat()
+        return datetime.now().strftime('%Y-%m-%d_%H_%M')
 
     @staticmethod
     def radom_string_number() -> str:
