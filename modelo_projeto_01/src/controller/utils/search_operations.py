@@ -1,6 +1,6 @@
 import pandas as pd
 
-from exceptions import FilterOperationUnavailable
+from src.controller.utils.exceptions import FilterOperationUnavailable
 
 CAR_VALUE_COLUMN_NAME = 'car_value'
 CAR_MAKE_COLUMN_NAME = 'car_make'
