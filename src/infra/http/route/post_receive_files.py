@@ -12,8 +12,10 @@ def route(app: flask.app.Flask):
     def request_post_example():
         try:
             dataset = request.files["dataset"]
-            gen = Generator.radom_string_number()
-            dataset.save("files/datasets/"+gen+".csv")
+            name = Generator.radom_string_number()
+            date = Generator.date_now_isoformat()
+            file = "files/datasets/"+date + "_" + name + ".csv"
+            dataset.save(file)
             return jsonify(), 200
         except Exception as err:
             response = Http.handle_generic_http_error(err)
