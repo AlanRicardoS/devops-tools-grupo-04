@@ -11,11 +11,8 @@ def route(app: flask.app.Flask):
     @auth.requires_auth
     def request_post_example():
         try:
-            print("1")
             dataset = request.files["dataset"]
-            print("1")
             gen = Generator.radom_string_number()
-            print(gen)
             dataset.save("files/datasets/"+gen+".csv")
             return jsonify(), 200
         except Exception as err:
