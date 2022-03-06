@@ -6,13 +6,13 @@ import flask
 
 
 def route(app: flask.app.Flask):
-    @app.route('/carmake/filter', methods=['GET'])
+    @app.route('/car_make/filter', methods=['GET'])
     @auth.requires_auth
     def request_get_carmake_with_filter():
         try:
 
             response = get_mean_by_carmake_with_filter.get_mean_by_carmake_with_filter(
-                request.headers["carmake"])
+                request.headers["car_make"])
 
             return response, 200
         except Exception as err:
