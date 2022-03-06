@@ -6,7 +6,7 @@ import flask
 
 
 def route(app: flask.app.Flask):
-    @app.route('/carmake', methods=['GET'])
+    @app.route('/car_make', methods=['GET'])
     @auth.requires_auth
     def request_get_carmake():
         try:
